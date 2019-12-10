@@ -1,0 +1,236 @@
+.container {
+    height: 50vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balls {
+    background-color: #EBE6DB;
+}
+
+.swords {
+    background-color: #1F1E1F;
+}
+
+.star_wars_swords {
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+
+.sword {
+    width: 50px;
+    height: 3px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 25%;
+}
+
+.sword_animated::before {
+    content: '';
+    display: block;
+    background-color: #1F1E1F;
+    height: 3px;
+    width: 5px;
+    margin-left: 10px;
+}
+
+.sword_middle::after {
+    content: '';
+    display: block;
+    background-color: #1F1E1F;
+    height: 3px;
+    width: 5px;
+    margin-left: 35px;
+}
+
+
+.star_wars_swords:hover>.sword_bottom {
+    animation: active-two;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 235, 1);
+}
+
+.star_wars_swords:hover>.sword_middle {
+    animation-name: active-one;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    box-shadow: 0px 0px 10px 5px rgba(235, 12, 0, 1);
+}
+
+.star_wars_swords:hover>.sword_top {
+    display: none;
+}
+
+@keyframes active-two {
+    100% {
+        transform: rotate(-50deg);
+
+    }
+}
+
+@keyframes active-one {
+    100% {
+        transform: translate(8px, 14px) rotate(50deg);
+    }
+}
+
+.balls {
+    flex-direction: column;
+}
+
+.balls-elements {
+    height: fit-content;
+    padding-bottom: 30px;
+}
+
+.shadow-elements {
+    height: fit-content;
+}
+
+.container__element {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: blue;
+
+}
+
+.container__shadow {
+    width: 70px;
+    height: 25px;
+    background: rgb(208, 208, 208, 0.5);
+    border-radius: 50%;
+
+}
+
+.container__shadow--1 {
+    animation-name: shadow__move;
+    animation-duration: 450ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.container__shadow--7 {
+    animation-name: shadow__move--last;
+    animation-duration: 450ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+}
+
+.ball--1 {
+    background-color: #2E4F6D;
+    animation-name: ball__bounce;
+    animation-duration: 450ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.ball--2 {
+    background: #2F4155;
+
+}
+
+.ball--3 {
+    background: linear-gradient(90deg, rgba(47, 65, 85, 1) 50%, rgba(104, 56, 60, 1) 100%);
+
+}
+
+.ball--4 {
+    background: linear-gradient(90deg, rgba(82, 57, 68, 1) 50%, rgba(105, 54, 57, 1) 100%);
+
+}
+
+.ball--5 {
+    background: linear-gradient(90deg, rgba(103, 54, 57, 1) 50%, rgba(150, 49, 42, 1) 100%);
+
+}
+
+.ball--6 {
+    background: linear-gradient(90deg, rgba(147, 50, 43, 1) 50%, rgba(176, 44, 32, 1) 100%);
+
+}
+
+.ball--7 {
+    background-color: #B92E1F;
+    animation-name: ball__bounce--last;
+    animation-duration: 450ms;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.movings {
+    animation-name: moove;
+    animation-duration: 450ms;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes ball__bounce {
+    50% {
+        transform: rotate(0) translate(0);
+    }
+
+    100% {
+        transform: rotate(60deg) translateX(-150px);
+    }
+}
+
+@keyframes ball__bounce--last {
+
+    50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(-60deg) translateX(150px);
+    }
+}
+
+@keyframes shadow__move {
+    50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: translateX(-100px) scale(1.7);
+        background: rgb(208, 208, 208, 0.2);
+    }
+}
+
+@keyframes shadow__move--last {
+    50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: translateX(100px) scale(1.7);
+        background: rgb(208, 208, 208, 0.2);
+    }
+}
+
+@keyframes moove {
+
+
+    0% {
+        transform: translateX(-3px);
+    }
+
+
+    100% {
+        transform: translateX(3px)
+    }
